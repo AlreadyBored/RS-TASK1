@@ -208,30 +208,4 @@ describe("12. each() method testing", () => {
   });
 });
 
-describe("13. chaining testing", () => {
-  document.body.innerHTML = '';
-  const _ = new JqueryImplement();  
 
-  let clickTest = false;
-
-  _.append(document.createElement("nav"))
-    .$("nav")
-    .addClass("nav-el")
-    .html("Example text")
-    .css("background: red")
-    .attr("test", "test")
-    .on("click", () => clickTest = false);
-  _.root.click();
-
-  const tst1 = document.querySelector("nav") !== null;
-  const tst2 = _.root.tagName == "NAV";
-  const tst3 = _.root.classList.contains("nav-el");
-  const tst4 = _.root.textContent === "Example text";
-  const tst5 = _.root.style.background === "red";
-  const tst6 = _.root.getAttribute("test") === "test";
-  const tst7 = clickTest === true;
-
-  it("b) chain test", () => {
-    expect(tst1 && tst2 && tst3 && tst4 && tst5 && tst6 && tst7).to.be.true;
-  });
-});
