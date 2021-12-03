@@ -11,26 +11,18 @@ class JqueryImplement {
   }
 
   addClass(name) {
-    this.root.classList.add(name);
-    return this;
+
   }
 
   removeClass(name) {
-    this.root.classList.remove(name);
-    return this;
+
   }
 
   hasClass(name) {
-    if (this.root.classList.contains(name)) return true;
   }
 
   append(item) {
-    if (typeof item === "string") {
-      this.root.innerHTML += item;
-    } else {
-      this.root.append(item);
-    }
-    return this;
+
   }
 
   html(text) {
@@ -50,7 +42,7 @@ class JqueryImplement {
     this.root.innerHTML = "";
   }
 
-  children() {
+  children() {    
     this.root = this.root.childNodes;
     return this;
   }
